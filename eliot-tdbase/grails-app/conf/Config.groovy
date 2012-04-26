@@ -146,7 +146,9 @@ grails.plugins.springsecurity.cas.active = false
 
 // set security rbac
 //
-grails.plugins.springsecurity.interceptUrlMap = ['/': ['IS_AUTHENTICATED_FULLY'],
+grails.plugins.springsecurity.interceptUrlMap = [
+        //'/ws/rest/1.0/**' : ['IS_ANONYMOUS'],
+        '/': ['IS_AUTHENTICATED_FULLY'],
         '/dashboard/**': ["${FonctionEnum.ENS.toRole()}",
                 'IS_AUTHENTICATED_FULLY'],
         '/sujet/**': ["${FonctionEnum.ENS.toRole()}",
